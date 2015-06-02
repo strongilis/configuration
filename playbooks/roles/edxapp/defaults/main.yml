@@ -513,7 +513,7 @@ edxapp_media_dir: "{{ edxapp_data_dir }}/media"
 edxapp_course_static_dir: "{{ edxapp_data_dir }}/course_static"
 edxapp_course_data_dir: "{{ edxapp_data_dir }}/data"
 edxapp_upload_dir: "{{ edxapp_data_dir }}/uploads"
-edxapp_theme_dir: "{{ edxapp_data_dir }}/themes"
+edxapp_custom_theme_dir: "{{ edxapp_data_dir }}/themes"
 edxapp_git_identity: "{{ edxapp_app_dir }}/edxapp-git-identity"
 edxapp_git_ssh: "/tmp/edxapp_git_ssh.sh"
 
@@ -743,6 +743,7 @@ generic_env_config:  &edxapp_generic_env
   COMMENTS_SERVICE_KEY: "{{ EDXAPP_COMMENTS_SERVICE_KEY }}"
   SEGMENT_IO_LMS: "{{ EDXAPP_SEGMENT_IO_LMS }}"
   SEGMENT_IO: "{{ EDXAPP_SEGMENT_IO }}"
+  THEME_DIR: "{{ edxapp_theme_dir }}"
   THEME_NAME: "{{ edxapp_theme_name }}"
   TECH_SUPPORT_EMAIL: "{{ EDXAPP_TECH_SUPPORT_EMAIL }}"
   CONTACT_EMAIL: "{{ EDXAPP_CONTACT_EMAIL }}"
@@ -900,6 +901,9 @@ edxapp_use_custom_theme: false
 edxapp_theme_name: ""
 edxapp_theme_source_repo: 'https://{{ COMMON_GIT_MIRROR }}/Stanford-Online/edx-theme.git'
 edxapp_theme_version: 'master'
+
+# New theming.
+edxapp_theme_dir: ""
 
 # make this the public URL instead of writable
 edx_platform_repo: "https://{{ COMMON_GIT_MIRROR }}/edx/edx-platform.git"
